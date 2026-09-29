@@ -1,0 +1,11 @@
+# Compiled Executables and Object files
+*.exe
+*.o
+*.obj
+*.out
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
