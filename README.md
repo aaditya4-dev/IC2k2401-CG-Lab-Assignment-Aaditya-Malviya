@@ -1,125 +1,71 @@
-# Computer Graphics Lab – Assignment 1
+# Computer Graphics Lab Assignments
 
-## Basic Graphics Primitives
+Practical lab assignments for the Computer Graphics course (MCA 5 Years).
+
+---
+
+## Table of Contents
+- [Assignment 1: Basic Graphics Primitives](#assignment-1-basic-graphics-primitives)
+- [Assignment 2: Digital Differential Analyzer (DDA) Line Generation Algorithm](#assignment-2-digital-differential-analyzer-dda-line-generation-algorithm)
+- [Technologies & Requirements](#technologies--requirements)
+- [Student Details](#student-details)
+
+---
+
+## Assignment 1: Basic Graphics Primitives
 
 ### Objective
+To write a C++ program using the `graphics.h` library to draw basic graphics primitives in a single graphics window:
+1. Straight Line (`line()`)
+2. Circle (`circle()`)
+3. Rectangle (`rectangle()`)
+4. Triangle (using connected `line()` segments)
 
-To write a C++ program using the `graphics.h` library to draw the following basic graphics primitives in a single graphics window:
+### Program File
+- **Source Code:** [`CGM_lab1.cpp`](CGM_lab1.cpp)
 
-1. Straight Line
-2. Circle
-3. Rectangle
-4. Triangle
-
----
-
-## Technologies Used
-
-- C++
-- `graphics.h`
-- `conio.h`
-- GCC / MinGW
-- Visual Studio Code
-
----
-
-## Program File
-
-**File:** `CGM_lab1.cpp`
-
----
-
-## Graphics Primitives
-
-### 1. Straight Line
-
-A straight line is drawn between two specified points using the `line()` function.
-
-### 2. Circle
-
-A circle is drawn using the `circle()` function by specifying its center coordinates and radius.
-
-### 3. Rectangle
-
-A rectangle is drawn using the `rectangle()` function by specifying its top-left and bottom-right coordinates.
-
-### 4. Triangle
-
-A triangle is created by drawing three connected straight lines using the `line()` function.
-
----
-
-## Functions Used
-
-| Function | Description |
-|----------|-------------|
-| `initgraph()` | Initializes the graphics mode |
-| `line()` | Draws a straight line |
-| `circle()` | Draws a circle |
-| `rectangle()` | Draws a rectangle |
-| `getch()` | Waits for a key press |
-| `closegraph()` | Closes the graphics mode |
-
----
-
-## Header Files Used
-
-### graphics.h
-
-Used for graphics-related functions such as drawing lines, circles, and rectangles.
-
-### conio.h
-
-Used for the `getch()` function to pause the graphics window until a key is pressed.
-
----
-
-## Output
-
-The program displays the following four graphics primitives in a single graphics window:
-
-- Straight Line
-- Circle
-- Rectangle
-- Triangle
-
+### Output
 ![Basic Shapes Output](Screenshot%202026-09-29%20192412.png)
 
 ---
 
-## Requirements
+## Assignment 2: Digital Differential Analyzer (DDA) Line Generation Algorithm
 
-- C++ compiler
-- GCC / MinGW
-- `graphics.h` library
-- `conio.h` library
-- Visual Studio Code or any compatible C++ IDE
+### Objective
+To implement the DDA (Digital Differential Analyzer) line generation algorithm in C++ using `graphics.h`.
+
+### Algorithm Overview
+The DDA algorithm calculates pixel positions along a straight line by taking unit steps in one coordinate and generating corresponding fractional increments in the other:
+1. Input endpoints: $(x_1, y_1)$ and $(x_2, y_2)$
+2. Calculate differentials:
+   $$\Delta x = x_2 - x_1$$
+   $$\Delta y = y_2 - y_1$$
+3. Determine steps:
+   $$\text{steps} = \max(|\Delta x|, |\Delta y|)$$
+4. Calculate increments per step:
+   $$x_{\text{inc}} = \frac{\Delta x}{\text{steps}}$$
+   $$y_{\text{inc}} = \frac{\Delta y}{\text{steps}}$$
+5. Increment and plot successive points with screen center offset $(320 + \text{round}(x), 240 - \text{round}(y))$ using `putpixel()`.
+
+### Program File
+- **Source Code:** [`CGM_lab2.cpp`](CGM_lab2.cpp)
+
+### Output
+![DDA Output](dda_output.png)
 
 ---
 
-## Learning Outcomes
-
-After completing this assignment, the following concepts are understood:
-
-- Basics of computer graphics programming
-- Graphics initialization
-- Coordinate system
-- Drawing basic graphics primitives
-- Use of `graphics.h` functions
-- Creating geometric shapes using coordinates
+## Technologies & Requirements
+- **Language:** C++
+- **Graphics Library:** `graphics.h` (WinBGIm / MinGW 32-bit)
+- **Compiler:** GCC / MinGW
+- **Development Environment:** Visual Studio Code
 
 ---
 
 ## Student Details
 
-**Name:** Aaditya Malviya  
-**Roll Number:** IC-2K24-01  
-**Course:** MCA (5 Years)  
-**Subject:** Computer Graphics  
-**Assignment:** Lab Assignment 1
-
----
-
-## Conclusion
-
-The program successfully demonstrates the implementation of basic graphics primitives using C++ and the `graphics.h` library.
+- **Name:** Aaditya Malviya  
+- **Roll Number:** IC-2K24-01  
+- **Course:** MCA (5 Years)  
+- **Subject:** Computer Graphics  
